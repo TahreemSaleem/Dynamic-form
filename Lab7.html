@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>dynamic form</title>
+<link rel="stylesheet" type="text/css" ></link>
+<script type="text/javascript">
+function clickftn()
+{
+	var i = 0;
+	var mydiv = document.getElementById("main");
+	var e = document.getElementById("elements");
+	var myform=document.createElement("form");
+	//var fname = prompt("Please enter form name", "");
+	//myform.id = fname;
+	myform.action="";
+	myform.name="myform";
+    myform.method="get";
+    myform.width ="700px";
+    myform.height = "700px";
+    mydiv.appendChild(myform);
+    var createIn=document.createElement('input');                     //creating the submit button which when clicked will save the value written in the textboxes
+        createIn.type="button";
+        createIn.name="createin";
+        createIn.value="Create Input Textbox";
+        createIn.onclick = function() 
+        	{ // Note this is a function
+	        	var textbox=document.createElement('input');                     //creating the submit button which when clicked will save the value written in the textboxes
+		        textbox.type="textbox";
+		        
+		        textbox.value="";
+		        var br = document.createElement("br");
+			    e.appendChild(br);
+		        var label1 = document.createElement("label");
+		        label1.innerText ="Input:";
+		        e.appendChild(label1);
+		        //var tname = prompt("Please enter Textbox name", "");
+		        //textbox.id = tname;
+		        
+		        e.appendChild(textbox);
+
+    		};
+    	myform.appendChild(createIn);
+    var createp=document.createElement('input');                     //creating the submit button which when clicked will save the value written in the textboxes
+        createp.type="button";
+        createp.name="createp";
+        createp.value="Create Input password";
+        createp.onclick = function() 
+        	{ // Note this is a function
+	        	var textbox=document.createElement('input');                     //creating the submit button which when clicked will save the value written in the textboxes
+		        textbox.type="PASSWORD";
+		        
+		        textbox.value="";
+
+		        var br = document.createElement("br");
+			    e.appendChild(br);
+		        label1 = document.createElement("label");
+		        label1.innerText ="password";
+		        e.appendChild(label1);
+		        //var tname = prompt("Please enter PASSWORD name", "");
+		        //textbox.id = tname;
+		        //
+		        e.appendChild(textbox);
+
+    		};
+        myform.appendChild(createp);
+    var createC=document.createElement('input');                     //creating the submit button which when clicked will save the value written in the textboxes
+	    createC.type="button";
+	    createC.name="createC";
+	    createC.value="Create check button";
+	    createC.onclick = function() 
+	    	{ // Note this is a function
+	        	var textbox=document.createElement('input');                     //creating the submit button which when clicked will save the value written in the textboxes
+		        textbox.type="checkbox";
+		       
+		        textbox.value="";
+		        var br = document.createElement("br");
+			        e.appendChild(br);
+		        label1 = document.createElement("label");
+		        label1.innerText ="c1";
+		        e.appendChild(label1);
+		        //var tname = prompt("Please enter Textbox name", "");
+		        //textbox.id = tname;
+		        
+		        e.appendChild(textbox);
+
+			};
+		myform.appendChild(createC);
+	var createR=document.createElement('input');                     //creating the submit button which when clicked will save the value written in the textboxes
+		    createR.type="button";
+		    createR.name="createR";
+		    createR.value="Create Radio button";
+		    createR.onclick = function() 
+		    	{ // Note this is a function
+		        	var textbox=document.createElement('input');                     //creating the submit button which when clicked will save the value written in the textboxes
+			        textbox.type="radio";
+			       
+			        textbox.value="";
+			        var br = document.createElement("br");
+			        e.appendChild(br);
+			        label1 = document.createElement("label");
+			        label1.innerText ="r1";
+			        e.appendChild(label1);
+			        //var tname = prompt("Please enter Textbox name", "");
+			        //textbox.id = tname;
+			        
+			        e.appendChild(textbox);
+
+				};
+			myform.appendChild(createR);
+	var createD=document.createElement('input');                     //creating the submit button which when clicked will save the value written in the textboxes
+		    createD.type="button";
+		    createD.name="createR";
+		    createD.value="Create Datalist";
+		    createD.onclick = function() 
+		    	{ // Note this is a function
+		    		var br = document.createElement("br");
+			        e.appendChild(br);
+
+			        label1 = document.createElement("label");
+			        label1.innerText ="D1";
+			        e.appendChild(label1);
+
+		        	var x = document.createElement("INPUT");
+				    x.setAttribute("list", "browsers");
+				    e.appendChild(x);
+
+				    var y = document.createElement("DATALIST");
+				    y.setAttribute("id", "browsers");
+				    e.appendChild(y);
+
+				    var opt=document.createElement('input');                     //creating the submit button which when clicked will save the value written in the textboxes
+				    opt.type="button";
+				    opt.name="opt";
+				    opt.value="Option";
+				    e.appendChild(opt);
+				    opt.onclick = function() {
+					    var z = document.createElement("Insert OPTION");
+					    var optv = prompt("Please enter Textbox name", "");
+					    z.setAttribute("value", optv);
+					    y.appendChild(z);
+					}
+			      
+			        //var tname = prompt("Please enter Textbox name", "");
+			        //textbox.id = tname;
+			        
+			       
+
+				};
+			myform.appendChild(createD);
+	var createN=document.createElement('input');                     //creating the submit button which when clicked will save the value written in the textboxes
+        createN.type="button";
+        createN.name="createN";
+        createN.value="Create Number Input";
+        createN.onclick = function() 
+        	{ // Note this is a function
+	        	var textbox=document.createElement('input');                     //creating the submit button which when clicked will save the value written in the textboxes
+		        textbox.type="number";
+		        textbox.value="";
+		        var br = document.createElement("br");
+			    e.appendChild(br);
+		        var label1 = document.createElement("label");
+		        label1.innerText ="Input:";
+		        e.appendChild(label1);
+		        //var tname = prompt("Please enter Textbox name", "");
+		        //textbox.id = tname;
+		       
+		        e.appendChild(textbox);
+
+    		};
+    	myform.appendChild(createN);
+    var createK=document.createElement('input');                     //creating the submit button which when clicked will save the value written in the textboxes
+        createK.type="button";
+        createK.name="createK";
+        createK.value="Create keygen";
+        createK.onclick = function() 
+        	{ // Note this is a function
+
+        		var br = document.createElement("br");
+			    e.appendChild(br);
+			    var label1 = document.createElement("label");
+		        label1.innerText ="Keygen:";
+		        e.appendChild(label1);
+	        	var x = document.createElement("KEYGEN");
+			    x.setAttribute("name", "security");
+			    e.appendChild(x);
+		        
+		        
+		        //var tname = prompt("Please enter Textbox name", "");
+		        //textbox.id = tname;
+		     };
+    	myform.appendChild(createK);
+    var createF=document.createElement('input');                     //creating the submit button which when clicked will save the value written in the textboxes
+        createF.type="button";
+        createF.name="createK";
+        createF.value="Create File Upload";
+        createF.onclick = function() 
+        	{ // Note this is a function
+
+        		var br = document.createElement("br");
+			    e.appendChild(br);
+			    
+	        	var x = document.createElement("INPUT");
+    			x.setAttribute("type", "file");
+    			e.appendChild(x);
+		        //var tname = prompt("Please enter Textbox name", "");
+		        //textbox.id = tname;
+		     };
+    	myform.appendChild(createF);
+
+    var createS=document.createElement('input');                     //creating the submit button which when clicked will save the value written in the textboxes
+		    createS.type="button";
+		    createS.name="createR";
+		    createS.value="Create SELECT list";
+		    createS.onclick = function() 
+		    	{ // Note this is a function
+		    		var br = document.createElement("br");
+			        e.appendChild(br);
+
+			        label1 = document.createElement("label");
+			        label1.innerText ="select";
+			        e.appendChild(label1);
+
+		        	 var x = document.createElement("SELECT");
+				    x.setAttribute("id", "mySelect");
+				    e.appendChild(x);
+
+				   
+
+				    var opt=document.createElement('input');                     //creating the submit button which when clicked will save the value written in the textboxes
+				    opt.type="button";
+				    opt.name="opt";
+				    opt.value="Insert Option";
+				    e.appendChild(opt);
+				    opt.onclick = function() {
+					     var z = document.createElement("option");
+				    
+					    var optv = prompt("Please enter Textbox name", "");
+					    z.setAttribute("value", optv);
+					    var t = document.createTextNode(optv);
+					    z.appendChild(t);
+					    document.getElementById("mySelect").appendChild(z);
+					}
+			      
+			        //var tname = prompt("Please enter Textbox name", "");
+			        //textbox.id = tname;
+			      
+				};
+			myform.appendChild(createS);
+
+	var br = document.createElement("br");
+			        e.appendChild(br);
+	var saveButton=document.createElement('input');                     //creating the submit button which when clicked will save the value written in the textboxes
+        saveButton.type="submit";
+        saveButton.name="submitButton";
+        saveButton.value="Submit";
+        saveButton.className = "button-0";
+        myform.appendChild(saveButton);
+
+
+
+}
+
+</script>
+<style type="text/css">
+.button-0 {
+	top:50%;
+	align-content: center;
+    position: relative;
+    padding: 10px 40px;
+    margin: 0px 10px 10px 0px;
+    float: left;
+    border-radius: 10px;
+    font-family: 'Helvetica', cursive;
+    font-size: 25px;
+    color: #FFF;
+    text-decoration: none;  
+    background-color: #3498DB;
+    border-bottom: 5px solid #2980B9;
+    text-shadow: 0px -2px #2980B9;
+    /* Animation */
+    transition: all 0.1s;
+    -webkit-transition: all 0.1s;
+}
+
+.button-0:hover, 
+.button-0:focus {
+    text-decoration: none;
+    color: #fff;
+}
+
+.button-0:active {
+    transform: translate(0px,5px);
+    -webkit-transform: translate(0px,5px);
+    border-bottom: 1px solid;
+}
+</style>
+</head>
+<body>
+	<div id="main">
+		<button type="button" id ="create" onclick ="clickftn()">Create Form</button>
+		
+	</div>
+	<div id = "elements"></div>
+</body>
+</html>
