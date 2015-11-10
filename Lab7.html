@@ -13,61 +13,93 @@ function clickftn()
 	var myform=document.createElement("form");
 	//var fname = prompt("Please enter form name", "");
 	//myform.id = fname;
+	var js = '{ "elements" : [ ';
+	var mid = "";
 	myform.action="";
 	myform.name="myform";
     myform.method="get";
     myform.width ="700px";
     myform.height = "700px";
     mydiv.appendChild(myform);
+    var req ="";
     var createIn=document.createElement('input');                     //creating the submit button which when clicked will save the value written in the textboxes
         createIn.type="button";
         createIn.name="createin";
         createIn.value="Create Input Textbox";
+        createIn.style.position = "absolute";
+        createIn.style.top = "100px";
+        //createIn.className = "button-0";
+        
         createIn.onclick = function() 
         	{ // Note this is a function
 	        	var textbox=document.createElement('input');                     //creating the submit button which when clicked will save the value written in the textboxes
 		        textbox.type="textbox";
-		        
+		        var tname = prompt("Please enter Textbox name", "");
+		        textbox.name = tname;
 		        textbox.value="";
+		        var max= prompt("Please enter Maximum length of Textbox ", "");
+		        textbox.maxLength = max;
 		        var br = document.createElement("br");
 			    e.appendChild(br);
 		        var label1 = document.createElement("label");
-		        label1.innerText ="Input:";
+		        label1.innerText =tname;
 		        e.appendChild(label1);
-		        //var tname = prompt("Please enter Textbox name", "");
-		        //textbox.id = tname;
-		        
 		        e.appendChild(textbox);
+		        var r = confirm("Is this a required Field?");
+				if (r == true) {
+				    req = "true";
+				} else {
+				    req = "false";
+				}
 
+		        mid = '{ "Name" : "' + textbox.name + '" , "Type" : "' + textbox.type + '" , "Required" : "' + req + '" } , ';
+		        js = js.concat(mid);
+
+		        
+		        
     		};
     	myform.appendChild(createIn);
     var createp=document.createElement('input');                     //creating the submit button which when clicked will save the value written in the textboxes
         createp.type="button";
         createp.name="createp";
         createp.value="Create Input password";
+        createp.style.position = "absolute";
+        createp.style.top = "100px";
+        createp.style.left = "60px";
+
         createp.onclick = function() 
         	{ // Note this is a function
 	        	var textbox=document.createElement('input');                     //creating the submit button which when clicked will save the value written in the textboxes
 		        textbox.type="PASSWORD";
-		        
+		        var tname = prompt("Please enter PASSWORD name", "");
+		        textbox.name = tname;
 		        textbox.value="";
-
+		        var max= prompt("Please enter Maximum length of Textbox ", "");
+		        textbox.maxLength = max;
 		        var br = document.createElement("br");
 			    e.appendChild(br);
 		        label1 = document.createElement("label");
-		        label1.innerText ="password";
+		        label1.innerText =tname;
 		        e.appendChild(label1);
-		        //var tname = prompt("Please enter PASSWORD name", "");
-		        //textbox.id = tname;
-		        //
 		        e.appendChild(textbox);
+		        var r = confirm("Is this a required Field?");
+				if (r == true) {
+				    req = "true";
+				} else {
+				    req = "false";
+				}
 
+		        mid = '{ "Name" : "' + textbox.name + '" , "Type" : "' + textbox.type + '" , "Required" : "' + req + '" } , ';
+		        js = js.concat(mid);
     		};
         myform.appendChild(createp);
     var createC=document.createElement('input');                     //creating the submit button which when clicked will save the value written in the textboxes
 	    createC.type="button";
 	    createC.name="createC";
 	    createC.value="Create check button";
+	    createC.style.position = "absolute";
+        createC.style.top = "130px";
+        createC.style.left = "60px";
 	    createC.onclick = function() 
 	    	{ // Note this is a function
 	        	var textbox=document.createElement('input');                     //creating the submit button which when clicked will save the value written in the textboxes
@@ -76,13 +108,23 @@ function clickftn()
 		        textbox.value="";
 		        var br = document.createElement("br");
 			        e.appendChild(br);
-		        label1 = document.createElement("label");
-		        label1.innerText ="c1";
-		        e.appendChild(label1);
-		        //var tname = prompt("Please enter Textbox name", "");
-		        //textbox.id = tname;
+		         label1 = document.createElement("label");
+			        
 		        
+		        var tname = prompt("Please enter  name", "");
+		        textbox.name = tname;
+		        label1.innerText =tname;
+		        e.appendChild(label1);
 		        e.appendChild(textbox);
+		        var r = confirm("Is this a required Field?");
+				if (r == true) {
+				    req = "true";
+				} else {
+				    req = "false";
+				}
+
+		        mid = '{ "Name" : "' + textbox.name + '" , "Type" : "' + textbox.type + '" , "Required" : "' + req + '" } , ';
+		        js = js.concat(mid);
 
 			};
 		myform.appendChild(createC);
@@ -90,6 +132,9 @@ function clickftn()
 		    createR.type="button";
 		    createR.name="createR";
 		    createR.value="Create Radio button";
+		    createR.style.position = "absolute";
+	        createR.style.top = "100px";
+	        createR.style.left = "400px";
 		    createR.onclick = function() 
 		    	{ // Note this is a function
 		        	var textbox=document.createElement('input');                     //creating the submit button which when clicked will save the value written in the textboxes
@@ -99,12 +144,22 @@ function clickftn()
 			        var br = document.createElement("br");
 			        e.appendChild(br);
 			        label1 = document.createElement("label");
-			        label1.innerText ="r1";
-			        e.appendChild(label1);
-			        //var tname = prompt("Please enter Textbox name", "");
-			        //textbox.id = tname;
 			        
+			        
+			        var tname = prompt("Please enter  name", "");
+			        textbox.name = tname;
+			        label1.innerText =tname;
+			        e.appendChild(label1);
 			        e.appendChild(textbox);
+			        var r = confirm("Is this a required Field?");
+					if (r == true) {
+					    req = "true";
+					} else {
+					    req = "false";
+					}
+
+			        mid = '{ "Name" : "' + textbox.name + '" , "Type" : "' + textbox.type + '" , "Required" : "' + req + '" } , ';
+		        	js = js.concat(mid);
 
 				};
 			myform.appendChild(createR);
@@ -112,22 +167,29 @@ function clickftn()
 		    createD.type="button";
 		    createD.name="createR";
 		    createD.value="Create Datalist";
+		    createD.style.position = "absolute";
+	        createD.style.top = "130px";
+	        createD.style.left = "260px";
 		    createD.onclick = function() 
 		    	{ // Note this is a function
 		    		var br = document.createElement("br");
 			        e.appendChild(br);
 
+			        var tname = prompt("Please enter  name", "");
+			        
+
 			        label1 = document.createElement("label");
-			        label1.innerText ="D1";
+			        label1.innerText = tname;
 			        e.appendChild(label1);
 
 		        	var x = document.createElement("INPUT");
 				    x.setAttribute("list", "browsers");
+				    x.name = tname;
 				    e.appendChild(x);
 
 				    var y = document.createElement("DATALIST");
 				    y.setAttribute("id", "browsers");
-				    e.appendChild(y);
+				    
 
 				    var opt=document.createElement('input');                     //creating the submit button which when clicked will save the value written in the textboxes
 				    opt.type="button";
@@ -135,15 +197,22 @@ function clickftn()
 				    opt.value="Option";
 				    e.appendChild(opt);
 				    opt.onclick = function() {
-					    var z = document.createElement("Insert OPTION");
+					    var z = document.createElement("OPTION");
 					    var optv = prompt("Please enter Textbox name", "");
 					    z.setAttribute("value", optv);
 					    y.appendChild(z);
+
 					}
-			      
-			        //var tname = prompt("Please enter Textbox name", "");
-			        //textbox.id = tname;
-			        
+			      	var r = confirm("Is this a required Field?");
+					if (r == true) {
+					    req = "true";
+					} else {
+					    req = "false";
+					}
+
+			        mid = '{ "Name" : "' + textbox.name + '" , "Type" : "' + textbox.type + '" , "Required" : "' + req + '" } , ';
+		        	js = js.concat(mid);
+			        e.appendChild(y);
 			       
 
 				};
@@ -152,6 +221,9 @@ function clickftn()
         createN.type="button";
         createN.name="createN";
         createN.value="Create Number Input";
+        createN.style.position = "absolute";
+	        createN.style.top = "100px";
+	        createN.style.left = "560px";
         createN.onclick = function() 
         	{ // Note this is a function
 	        	var textbox=document.createElement('input');                     //creating the submit button which when clicked will save the value written in the textboxes
@@ -159,13 +231,24 @@ function clickftn()
 		        textbox.value="";
 		        var br = document.createElement("br");
 			    e.appendChild(br);
+			    var tname = prompt("Please enter  name", "");
+		        textbox.name = tname;
 		        var label1 = document.createElement("label");
-		        label1.innerText ="Input:";
+		        label1.innerText =tname;
 		        e.appendChild(label1);
-		        //var tname = prompt("Please enter Textbox name", "");
-		        //textbox.id = tname;
+		        
 		       
 		        e.appendChild(textbox);
+		        var r = confirm("Is this a required Field?");
+				if (r == true) {
+				    req = "true";
+				} else {
+				    req = "false";
+				}
+
+		        mid = '{ "Name" : "' + textbox.name + '" , "Type" : "' + textbox.type + '" , "Required" : "' + req + '" } , ';
+		        js = js.concat(mid);
+
 
     		};
     	myform.appendChild(createN);
@@ -173,6 +256,10 @@ function clickftn()
         createK.type="button";
         createK.name="createK";
         createK.value="Create keygen";
+        createK.style.position = "absolute";
+	        createK.style.top = "100px";
+	        createK.style.left = "750px";
+
         createK.onclick = function() 
         	{ // Note this is a function
 
@@ -186,14 +273,27 @@ function clickftn()
 			    e.appendChild(x);
 		        
 		        
-		        //var tname = prompt("Please enter Textbox name", "");
-		        //textbox.id = tname;
+		        var tname = prompt("Please enter name", "");
+		        x.name = tname;
+		        var r = confirm("Is this a required Field?");
+				if (r == true) {
+				    req = "true";
+				} else {
+				    req = "false";
+				}
+
+		        mid = '{ "Name" : "' + x.name + '" , "Type" : "' + x.type + '" , "Required" : "' + req + '" } , ';
+		        js = js.concat(mid);
+
 		     };
     	myform.appendChild(createK);
     var createF=document.createElement('input');                     //creating the submit button which when clicked will save the value written in the textboxes
         createF.type="button";
         createF.name="createK";
         createF.value="Create File Upload";
+        createF.style.position = "absolute";
+	        createF.style.top = "100px";
+	        createF.style.left = "900px";
         createF.onclick = function() 
         	{ // Note this is a function
 
@@ -203,8 +303,18 @@ function clickftn()
 	        	var x = document.createElement("INPUT");
     			x.setAttribute("type", "file");
     			e.appendChild(x);
-		        //var tname = prompt("Please enter Textbox name", "");
-		        //textbox.id = tname;
+		        var tname = prompt("Please enter Textbox name", "");
+		        textbox.name = tname;
+		        var r = confirm("Is this a required Field?");
+				if (r == true) {
+				    req = "true";
+				} else {
+				    req = "false";
+				}
+
+		        mid = '{ "Name" : "' + x.name + '" , "Type" : "' + x.type + '" , "Required" : "' + req + '" } , ';
+		        js = js.concat(mid);
+		        
 		     };
     	myform.appendChild(createF);
 
@@ -212,19 +322,23 @@ function clickftn()
 		    createS.type="button";
 		    createS.name="createR";
 		    createS.value="Create SELECT list";
+		     createS.style.position = "absolute";
+	        createS.style.top = "100px";
+	        createS.style.left = "1090px";
 		    createS.onclick = function() 
 		    	{ // Note this is a function
 		    		var br = document.createElement("br");
 			        e.appendChild(br);
-
+					var tname = prompt("Please enter Textbox name", "");
+			        
 			        label1 = document.createElement("label");
-			        label1.innerText ="select";
+			        label1.innerText =tname;
 			        e.appendChild(label1);
 
-		        	 var x = document.createElement("SELECT");
+		        	var x = document.createElement("SELECT");
 				    x.setAttribute("id", "mySelect");
 				    e.appendChild(x);
-
+				    x.name = tname;
 				   
 
 				    var opt=document.createElement('input');                     //creating the submit button which when clicked will save the value written in the textboxes
@@ -233,7 +347,7 @@ function clickftn()
 				    opt.value="Insert Option";
 				    e.appendChild(opt);
 				    opt.onclick = function() {
-					     var z = document.createElement("option");
+					    var z = document.createElement("option");
 				    
 					    var optv = prompt("Please enter Textbox name", "");
 					    z.setAttribute("value", optv);
@@ -242,30 +356,128 @@ function clickftn()
 					    document.getElementById("mySelect").appendChild(z);
 					}
 			      
-			        //var tname = prompt("Please enter Textbox name", "");
-			        //textbox.id = tname;
-			      
+			        
+			        var r = confirm("Is this a required Field?");
+					if (r == true) {
+					    req = "true";
+					} else {
+					    req = "false";
+					}
+
+			        mid = '{ "Name" : "' + x.name + '" , "Type" : "' + x.type + '" , "Required" : "' + req + '" } , ';
+		        	js = js.concat(mid);
+		        	
 				};
 			myform.appendChild(createS);
 
 	var br = document.createElement("br");
 			        e.appendChild(br);
 	var saveButton=document.createElement('input');                     //creating the submit button which when clicked will save the value written in the textboxes
-        saveButton.type="submit";
+        saveButton.type="button";
         saveButton.name="submitButton";
         saveButton.value="Submit";
-        saveButton.className = "button-0";
+        saveButton.style.position = "absolute";
+	        saveButton.style.top = "150px";
+	        saveButton.style.left = "500px";
+        var text = "";
+        saveButton.onclick = function ()
+        {
+        	js = js.substring(0, js.length - 2);
+        	
+			mid = ' ]}'
+			js = js.concat(mid);
+			console.log(js);
+			var obj = JSON.parse(js);
+			localStorage.setItem('form', JSON.stringify(obj));
+			var i =0;
+			for(i = 0; i<obj.elements.length; i++)
+			{
+				if (obj.elements[i].Required == "true")
+				{
+					
+					var nam = obj.elements[i].Name;
+					var formElements = document.getElementById("elements").children;
+					for(var i=0; i<formElements.length;i++)
+					{
+						if (formElements[i].name == nam)
+						{
+							if(formElements[i].value == "")
+							{
+								alert(formElements[i].name+" is empty");
+								return false;
+							}
+						}
+
+					}
+				}
+
+			}
+			var formElements = document.getElementById("elements").children;
+			for(var i=0; i<formElements.length;i++)
+				{
+					if (formElements[i].tagName == "INPUT")
+					{
+						if (formElements[i].type == "textbox");
+							{
+								
+								var patt = new RegExp("[A-Za-z]+$");
+								var str = formElements[i].value;
+								alert(formElements[i].name);
+								alert(formElements[i].value);
+								var res = patt.test(str); 
+								
+							   	if(!res)  {
+							      
+								    alert("message");  
+								    return false;  
+								}  
+
+							}
+					}
+				}
+
+
+
+		}
+	
         myform.appendChild(saveButton);
+    
+}
+function myFunction(){
+	var formData = JSON.parse(localStorage.getItem('form'));
+	if (formData != null)
+	{
+		
+		return buildForm(formData);
+		
+	}
+	function buildForm(obj)
+	{
+		var i =0;
+		
+		for(i = 0; i<obj.elements.length; i++)
+		{
+			var meradiv = document.getElementById("elements");
+			var create = document.createElement("INPUT");
+			
+			create.name = obj.elements[i].Name;
+			create.type = obj.elements[i].Type;
+			label1 = document.createElement("label");
+	        label1.innerText = obj.elements[i].Name;
+	        meradiv.appendChild(label1);
+	        meradiv.appendChild(create);
+			
+		}
+	}
 
 
 
 }
 
 </script>
+
 <style type="text/css">
 .button-0 {
-	top:50%;
-	align-content: center;
     position: relative;
     padding: 10px 40px;
     margin: 0px 10px 10px 0px;
@@ -294,11 +506,11 @@ function clickftn()
     -webkit-transform: translate(0px,5px);
     border-bottom: 1px solid;
 }
-</style>
-</head>
-<body>
+</style></head>
+<body onload="myFunction()" style="background-image:url(bg1.png)">
+	<div><button class="button-0" type="button" id="create" onclick="clickftn()" style="left: 45%;">Create Form</button>
+		</div>
 	<div id="main">
-		<button type="button" id ="create" onclick ="clickftn()">Create Form</button>
 		
 	</div>
 	<div id = "elements"></div>
